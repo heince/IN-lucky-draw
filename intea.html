@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+  <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+    <div class="ui five cards" id="luckyCards">
+        <div class="card">
+            <div class="ui slide masked reveal image small centered">
+                <img src="D:\Learning\vue\img\I-180x180.png">
+            </div>
+            <div class="ui bottom attached button" @click="getItem">
+                    <i class="add icon"></i>
+                    Select Me
+            </div>
+        </div>
+        <div class="card">
+            <div class="ui slide masked reveal image small centered">
+                    <img src="D:\Learning\vue\img\N-180x180.png">
+            </div>
+            <div class="ui bottom attached button" @click="getItem">
+                    <i class="add icon"></i>
+                    Select Me
+            </div>
+        </div>
+        <div class="card">
+            <div class="ui slide masked reveal image small centered">
+                    <img src="D:\Learning\vue\img\T-180x180.png">
+            </div>
+            <div class="ui bottom attached button" @click="getItem">
+                    <i class="add icon"></i>
+                    Select Me
+            </div>
+         </div>
+         <div class="card">
+            <div class="ui slide masked reveal image small centered">
+                    <img src="D:\Learning\vue\img\E-180x180.png">
+            </div>
+            <div class="ui bottom attached button" @click="getItem">
+                    <i class="add icon"></i>
+                    Select Me
+            </div>
+        </div>
+        <div class="card">
+            <div class="ui slide masked reveal image small centered">
+                    <img src="D:\Learning\vue\img\A-180x180.png">
+            </div>
+            <div class="ui bottom attached button" @click="getItem">
+                    <i class="add icon"></i>
+                    Select Me
+            </div>
+        </div>
+    </div>
+    <script>
+        var luckyCards = new Vue({
+            el: '#luckyCards',
+            data: {
+                list: ['item1', 'item2', 'item3', 'item4', 'item5'],
+                chosenItem: ''
+            },
+            methods: {
+                picker: function() {
+                    var chosenNumber = Math.floor(Math.random() * this.list.length);
+                    this.chosenItem = this.list[chosenNumber];
+                },
+                getItem: function() {
+                    this.picker();
+                    alert("You got " + this.chosenItem);
+                    this.chosenItem = '';
+                }
+            }
+        });
+    </script>
+</body>
+</html>
